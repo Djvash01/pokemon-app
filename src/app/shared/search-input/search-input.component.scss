@@ -1,0 +1,27 @@
+@import 'colors/colors.scss';
+
+.search {
+  &__container {
+    position: relative;
+  }
+  &__input {
+    height: 30px;
+    border: 2px solid $color-secondary;
+    padding: 5px;
+    padding-left: 30px;
+    color: $color-secondary;
+    border-radius: 4px;
+    &:focus-visible {
+      outline-color: $color-secondary;
+      border-color: $color-secondary;
+    }
+  }
+  &__prefix-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+  }
+}
