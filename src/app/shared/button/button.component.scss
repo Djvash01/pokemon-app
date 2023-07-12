@@ -2,10 +2,19 @@
 
 .primary-button {
   margin: 5px;
-  width: calc(100% - 10px);
+  width: fit-content;
   height: 40px;
+  padding: 5px 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: $color-primary;
+  color: $color-white;
+  border-radius: 5px;
+  border-color: transparent;
+  cursor: pointer;
+  &--disabled {
+    background-color: rgba($color: $color-primary, $alpha: 0.5);
+    cursor: not-allowed;
+  }
 }
