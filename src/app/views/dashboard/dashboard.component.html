@@ -2,19 +2,27 @@
   <section>
     <h1>Listado de Pokemon</h1>
     <div class="toolbar">
-      <app-search-input (valueChange)="handlerSearchValue($event)"></app-search-input>
+      <app-search-input
+        (valueChange)="handlerSearchValue($event)"
+      ></app-search-input>
       <app-button (click)="clearForm()">
-        <img src="assets/icons/add.svg" alt="create">
+        <img src="assets/icons/add.svg" alt="create" />
         Nuevo
       </app-button>
     </div>
   </section>
   <section *ngIf="pokemon; else notFound">
-    <app-information [pokemon]="pokemon"></app-information>
+    <app-information
+      [pokemon]="pokemon"
+      (remove)="removePokemon($event)"
+    ></app-information>
   </section>
   <section>
-    <ng-container *ngIf="save===action;else updateTemplate">
-      <app-pokemon-form (saveEvent)="savePokemon($event)" (cancelEvent)="clearForm()"></app-pokemon-form>
+    <ng-container *ngIf="save === action; else updateTemplate">
+      <app-pokemon-form
+        (saveEvent)="savePokemon($event)"
+        (cancelEvent)="clearForm()"
+      ></app-pokemon-form>
     </ng-container>
   </section>
 </div>
@@ -24,5 +32,9 @@
 </ng-template>
 
 <ng-template #updateTemplate>
-  <app-pokemon-form [pokemon]="pokemon" (saveEvent)="savePokemon($event)" (cancelEvent)="clearForm()"></app-pokemon-form>
+  <app-pokemon-form
+    [pokemon]="pokemon"
+    (saveEvent)="savePokemon($event)"
+    (cancelEvent)="clearForm()"
+  ></app-pokemon-form>
 </ng-template>

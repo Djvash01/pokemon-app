@@ -49,7 +49,7 @@ export class DashboardComponent implements OnInit {
     this.isLoading = true;
     const requestByAction = {
       [Actions.SAVE]: this.request.post<Pokemon, Pokemon>(this.endpoints.pokemon.save, pokemon),
-      [Actions.UPDATE]: this.request.put<Pokemon, Pokemon>(this.endpoints.pokemon.put(pokemon.id), pokemon),
+      [Actions.UPDATE]: this.request.put<Pokemon, Pokemon>(this.endpoints.pokemon.put(pokemon.id!), pokemon),
     };
 
     requestByAction[this.action]
@@ -62,5 +62,12 @@ export class DashboardComponent implements OnInit {
   public clearForm(): void {
     this.action = Actions.SAVE;
     this.pokemon = undefined;
+  }
+
+  public removePokemon(pokemon: Pokemon): void {
+    this.isLoading = true;
+    this.request.delete(this.endpoints.pokemon.remove(pokemon.id!))
+      .pipe(finalize(() => { this.isLoading = false; }))
+      .subscribe(() => this.clearForm());
   }
 }

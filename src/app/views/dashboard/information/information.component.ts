@@ -14,6 +14,10 @@ export class InformationComponent {
 
 
   public emitEditEvent(): void {
-    this.edit
+    this.edit.emit(this.pokemon);
+  }
+
+  public emitRemoveEvent(): void {
+    this.remove.emit(this.pokemon);
   }
 }

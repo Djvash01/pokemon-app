@@ -9,6 +9,6 @@ export class EndpointService {
     save: environment.apiUrl,
     getById: (id: string) => `${environment.apiUrl}${id}`,
     remove: (id: number) => `${environment.apiUrl}${id}`,
-    put: (id?: number) => `${environment.apiUrl}${ id ?? ''}`,
+    put: (id: number) => `${environment.apiUrl}${ id ?? ''}`,
   } as const
 }

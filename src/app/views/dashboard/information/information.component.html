@@ -6,16 +6,16 @@
   <div class="header">Vida</div>
   <div class="header">Tipo</div>
   <div class="header">Acciones</div>
-  <div class="value">{{pokemon.name}}</div>
+  <div class="value">{{ pokemon.name }}</div>
   <div class="value thumbnail">
     <img [src]="pokemon.image" alt="Imagen Miniatura" />
   </div>
-  <div class="value">{{pokemon.attack}}</div>
-  <div class="value">{{pokemon.defense}}</div>
-  <div class="value">{{pokemon.hp}}</div>
-  <div class="value">{{pokemon.type}}</div>
+  <div class="value">{{ pokemon.attack }}</div>
+  <div class="value">{{ pokemon.defense }}</div>
+  <div class="value">{{ pokemon.hp }}</div>
+  <div class="value">{{ pokemon.type }}</div>
   <div class="value actions">
-    <img class="actions__icon" src="assets/icons/edit.svg" alt="edit">
-    <img class="actions__icon" src="assets/icons/remove.svg" alt="remove">
+    <img class="actions__icon" (click)="emitEditEvent()" src="assets/icons/edit.svg" alt="edit" />
+    <img class="actions__icon" (click)="emitRemoveEvent()" src="assets/icons/remove.svg" alt="remove" />
   </div>
 </div>
