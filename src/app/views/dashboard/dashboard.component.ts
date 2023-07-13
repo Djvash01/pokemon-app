@@ -14,7 +14,8 @@ export class DashboardComponent implements OnInit {
   public isLoading = false;
   private readonly searchValue$ = new Subject<string>();
   public pokemon?: Pokemon;
-  private action = Actions.SAVE;
+  public action = Actions.SAVE;
+  public save = Actions.SAVE;
 
   constructor(
     private readonly request: RequestService,
@@ -50,15 +51,13 @@ export class DashboardComponent implements OnInit {
       [Actions.SAVE]: this.request.post<Pokemon, Pokemon>(this.endpoints.pokemon.save, pokemon),
       [Actions.UPDATE]: this.request.put<Pokemon, Pokemon>(this.endpoints.pokemon.put(pokemon.id), pokemon),
     };
-    
+
     requestByAction[this.action]
       .pipe(finalize(() => { this.isLoading = false; }))
       .subscribe((pokemon: Pokemon) => {
         this.pokemon = pokemon;
       })
   }
-
-  
 
   public clearForm(): void {
     this.action = Actions.SAVE;

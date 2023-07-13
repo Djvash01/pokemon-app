@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, NonNullableFormBuilder, Validators } from '@angular/forms';
 import { PokemonForm } from '@models/pokemon-form.interface.';
 import { Pokemon } from '@models/pokemon.interface';
@@ -9,7 +9,7 @@ import { Pokemon } from '@models/pokemon.interface';
   styleUrls: ['./pokemon-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PokemonFormComponent implements OnInit{
+export class PokemonFormComponent implements OnInit {
   @Input() pokemon?: Pokemon;
   @Output() cancelEvent = new EventEmitter<void>();
   @Output() saveEvent = new EventEmitter<Pokemon>();
