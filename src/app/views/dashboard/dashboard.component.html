@@ -12,6 +12,9 @@
   <section *ngIf="pokemon; else notFound">
     <app-information [pokemon]="pokemon"></app-information>
   </section>
+  <section>
+    <app-pokemon-form></app-pokemon-form>
+  </section>
 </div>
 
 <ng-template #notFound>

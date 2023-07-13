@@ -1,0 +1,64 @@
+@import 'colors/colors.scss';
+
+.form {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-white;
+  padding: 20px 50px;
+  border-radius: 5px;
+  border: 2px solid $color-secondary;
+  &__title {
+    text-align: center;
+  }
+
+  &__input {
+    height: 30px;
+    border: 2px solid $color-secondary;
+    padding: 5px;
+    color: $color-placeholder;
+    border-radius: 4px;
+    font-size: 1em;
+    &::placeholder {
+      color: $color-placeholder;
+    }
+    &:focus-visible {
+      outline-color: $color-secondary;
+    }
+    &--range {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.row, .column {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.row {
+  margin-bottom: 20px;
+}
+
+.column {
+  width: 30%;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+
+  &__btn {
+    margin: 0 20px;
+  }
+
+  &__icon {
+    margin-right: 10px;
+  }
+}
+
+.ng-invalid.ng-dirty:not(form)  {
+  border: 2px solid red; /* red */
+}
+

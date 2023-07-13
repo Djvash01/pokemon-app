@@ -1,0 +1,49 @@
+<form class="form" [formGroup]="form">
+  <h3 class="form__title">Nuevo Pokemon</h3>
+  <div class="row">
+    <div class="column">
+      <label for="name">Nombre:</label>
+      <input class="form__input" type="text" id="name" formControlName="name" />
+    </div>
+    <div class="column">
+      <label for="attack">Ataque:</label>
+      <div class="form__input--range">
+        0 <input type="range" id="attack" formControlName="attack" min="0" max="100" step="10" /> 100
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column">
+      <label for="image">Imagen:</label>
+      <input class="form__input" placeholder="Url" type="text" id="image" formControlName="image" />
+    </div>
+    <div class="column">
+      <label for="defense">Defensa:</label>
+      <div class="form__input--range">
+        0 <input type="range" id="defense" formControlName="defense" min="0" max="100" step="10" /> 100
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column">
+      <label for="type">Tipo:</label>
+      <input class="form__input" type="text" id="type" formControlName="type" />
+    </div>
+    <div class="column">
+      <label for="hp">Vida:</label>
+      <div class="form__input--range">
+        0 <input type="range" id="hp" formControlName="hp" min="0" max="100" step="10" /> 100
+      </div>
+    </div>
+  </div>
+  <div class="actions">
+    <app-button class="actions__btn">
+      <img class="actions__icon" src="assets/icons/save.svg" alt="create">
+      Guardar
+    </app-button>
+    <app-button class="actions__btn">
+      <img class="actions__icon" src="assets/icons/close.svg" alt="create">
+      Cancelar
+    </app-button>
+  </div>
+</form>
