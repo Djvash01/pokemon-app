@@ -1,14 +1,21 @@
-<div class="info-container">
+<div class="info-container" *ngIf="pokemon">
   <div class="header">Nombre</div>
   <div class="header">Imagen</div>
   <div class="header">Ataque</div>
   <div class="header">Defensa</div>
+  <div class="header">Vida</div>
+  <div class="header">Tipo</div>
   <div class="header">Acciones</div>
-  <div class="value">Pikachu</div>
-  <div class="value">
-    <img src="ruta/imagen.jpg" alt="Imagen Miniatura" />
+  <div class="value">{{pokemon.name}}</div>
+  <div class="value thumbnail">
+    <img [src]="pokemon.image" alt="Imagen Miniatura" />
   </div>
-  <div class="value">80</div>
-  <div class="value">60</div>
-  <div class="value">Editar / Eliminar</div>
+  <div class="value">{{pokemon.attack}}</div>
+  <div class="value">{{pokemon.defense}}</div>
+  <div class="value">{{pokemon.hp}}</div>
+  <div class="value">{{pokemon.type}}</div>
+  <div class="value actions">
+    <img class="actions__icon" src="assets/icons/edit.svg" alt="edit">
+    <img class="actions__icon" src="assets/icons/remove.svg" alt="remove">
+  </div>
 </div>

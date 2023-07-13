@@ -1,9 +1,10 @@
 @import 'colors/colors.scss';
 
 .info-container {
+  background-color: $color-white;
   display: grid;
   grid-template-rows: auto;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(7, 1fr);
 }
 
 .header, .value {
@@ -21,10 +22,21 @@
   &.value {
     border-top: 1px solid $color-secondary;
   }
+}
 
-  img {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
+.thumbnail img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-evenly;
+
+  &__icon {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
   }
 }

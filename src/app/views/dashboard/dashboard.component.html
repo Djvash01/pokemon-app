@@ -1,14 +1,19 @@
-<section class="content">
-  <h1>Listado de Pokemon</h1>
-  <div class="toolbar">
-    <app-search-input (valueChange)="handlerSearchValue($event)"></app-search-input>
-    <app-button>
-      <img src="assets/icons/add.svg" alt="create">
-      Nuevo
-    </app-button>
-  </div>
-</section>
-<section class="content">
-  <app-information></app-information>
-</section>
+<div class="content">
+  <section>
+    <h1>Listado de Pokemon</h1>
+    <div class="toolbar">
+      <app-search-input (valueChange)="handlerSearchValue($event)"></app-search-input>
+      <app-button>
+        <img src="assets/icons/add.svg" alt="create">
+        Nuevo
+      </app-button>
+    </div>
+  </section>
+  <section *ngIf="pokemon; else notFound">
+    <app-information [pokemon]="pokemon"></app-information>
+  </section>
+</div>
 
+<ng-template #notFound>
+  <h1>Pokemon no encontrado</h1>
+</ng-template>
