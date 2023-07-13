@@ -27,6 +27,8 @@
       "@environments/*": ["src/environments/*"],
       "@services/*": ["src/app/core/services/*"],
       "@models/*": ["src/app/core/models/*"],
+      "@shared/*": ["src/app/shared/*"],
+      "@views/*": ["src/app/views/*"],
     }
   },
   "angularCompilerOptions": {
