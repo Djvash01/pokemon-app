@@ -35,8 +35,8 @@ export class PokemonFormComponent implements OnInit, OnChanges {
       name: [this.pokemon?.name ?? '', [Validators.required]],
       image: [this.pokemon?.image ?? '', [Validators.required]],
       attack: [this.pokemon?.attack ?? 0, [Validators.required, Validators.min(0), Validators.max(100)]],
-      defense: [this.pokemon?.attack ?? 0, [Validators.required, Validators.min(0), Validators.max(100)]],
-      hp: [this.pokemon?.attack ?? 0, [Validators.required, Validators.min(0), Validators.max(100)]],
+      defense: [this.pokemon?.defense ?? 0, [Validators.required, Validators.min(0), Validators.max(100)]],
+      hp: [this.pokemon?.hp ?? 0, [Validators.required, Validators.min(0), Validators.max(100)]],
       type: [this.pokemon?.type ?? '', [Validators.required]],
       idAuthor: 1
     });
