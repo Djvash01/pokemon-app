@@ -8,9 +8,13 @@
     height: 30px;
     border: 2px solid $color-secondary;
     padding: 5px;
-    padding-left: 30px;
-    color: $color-secondary;
+    padding-left: 35px;
+    color: $color-placeholder;
     border-radius: 4px;
+    font-size: 1em;
+    &::placeholder {
+      color: $color-placeholder;
+    }
     &:focus-visible {
       outline-color: $color-secondary;
       border-color: $color-secondary;

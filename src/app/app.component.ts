@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pokemon-app';
+
+
+  handlerSearchValue(value: string){
+    console.log(value)
+  }
 }
