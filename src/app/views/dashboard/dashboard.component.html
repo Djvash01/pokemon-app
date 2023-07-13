@@ -15,26 +15,18 @@
     <app-information
       [pokemon]="pokemon"
       (remove)="removePokemon($event)"
+      (edit)="editPokemon($event)"
     ></app-information>
   </section>
   <section>
-    <ng-container *ngIf="save === action; else updateTemplate">
-      <app-pokemon-form
-        (saveEvent)="savePokemon($event)"
-        (cancelEvent)="clearForm()"
-      ></app-pokemon-form>
-    </ng-container>
+    <app-pokemon-form
+      [pokemon]="pokemon"
+      (saveEvent)="savePokemon($event)"
+      (cancelEvent)="clearForm()"
+    ></app-pokemon-form>
   </section>
 </div>
 
 <ng-template #notFound>
   <h2>Pokemon no encontrado</h2>
-</ng-template>
-
-<ng-template #updateTemplate>
-  <app-pokemon-form
-    [pokemon]="pokemon"
-    (saveEvent)="savePokemon($event)"
-    (cancelEvent)="clearForm()"
-  ></app-pokemon-form>
 </ng-template>

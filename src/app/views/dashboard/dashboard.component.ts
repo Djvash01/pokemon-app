@@ -3,7 +3,7 @@ import { Actions } from '@enums/actions.enum';
 import { Pokemon } from '@models/pokemon.interface';
 import { EndpointService } from '@services/endpoint/endpoint.service';
 import { RequestService } from '@services/request/request.service';
-import { catchError, EMPTY, finalize, of, Subject, switchMap, tap, throwError } from 'rxjs';
+import { finalize, Subject, switchMap, tap } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,7 +15,6 @@ export class DashboardComponent implements OnInit {
   private readonly searchValue$ = new Subject<string>();
   public pokemon?: Pokemon;
   public action = Actions.SAVE;
-  public save = Actions.SAVE;
 
   constructor(
     private readonly request: RequestService,
@@ -69,5 +68,10 @@ export class DashboardComponent implements OnInit {
     this.request.delete(this.endpoints.pokemon.remove(pokemon.id!))
       .pipe(finalize(() => { this.isLoading = false; }))
       .subscribe(() => this.clearForm());
+  }
+
+  public editPokemon(pokemon: Pokemon):void {
+    this.action = Actions.UPDATE;
+    this.pokemon = pokemon;
   }
 }

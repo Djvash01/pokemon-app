@@ -9,7 +9,7 @@ import { Pokemon } from '@models/pokemon.interface';
   styleUrls: ['./pokemon-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PokemonFormComponent implements OnInit {
+export class PokemonFormComponent implements OnInit, OnChanges {
   @Input() pokemon?: Pokemon;
   @Output() cancelEvent = new EventEmitter<void>();
   @Output() saveEvent = new EventEmitter<Pokemon>();
@@ -18,6 +18,12 @@ export class PokemonFormComponent implements OnInit {
   constructor(
     private readonly formBuilder: NonNullableFormBuilder
   ){}
+
+  public ngOnChanges(changes: SimpleChanges): void {
+    if(!changes['pokemon'].isFirstChange()){
+      this.createForm();
+    }
+  }
 
   public ngOnInit(): void {
     this.createForm()
