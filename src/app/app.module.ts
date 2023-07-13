@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { SharedModule } from '@shared/shared.module';
-import { ViewsModule } from '@views/views.module';
+import { DashboardModule } from '@views/dashboard/dashboard.module';
 
 import { AppComponent } from './app.component';
 
@@ -11,8 +10,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    SharedModule,
-    ViewsModule
+    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

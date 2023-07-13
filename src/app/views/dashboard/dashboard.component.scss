@@ -1,4 +1,9 @@
 .toolbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.content {
+  margin: 15px 0;
 }

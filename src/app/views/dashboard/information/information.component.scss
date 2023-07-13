@@ -1,0 +1,30 @@
+@import 'colors/colors.scss';
+
+.info-container {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.header, .value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: 2px solid $color-secondary;
+
+  &.header {
+    font-weight: bold;
+    border-bottom: 1px solid $color-secondary;
+  }
+
+  &.value {
+    border-top: 1px solid $color-secondary;
+  }
+
+  img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+  }
+}
