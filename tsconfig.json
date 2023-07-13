@@ -27,6 +27,7 @@
       "@environments/*": ["src/environments/*"],
       "@services/*": ["src/app/core/services/*"],
       "@models/*": ["src/app/core/models/*"],
+      "@enums/*": ["src/app/core/enums/*"],
       "@shared/*": ["src/app/shared/*"],
       "@views/*": ["src/app/views/*"],
     }

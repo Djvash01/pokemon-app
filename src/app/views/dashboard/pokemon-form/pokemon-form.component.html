@@ -37,11 +37,14 @@
     </div>
   </div>
   <div class="actions">
-    <app-button class="actions__btn">
+    <app-button 
+    (click)="savePokemon()"
+    class="actions__btn" 
+    [disabled]="this.form.invalid">
       <img class="actions__icon" src="assets/icons/save.svg" alt="create">
       Guardar
     </app-button>
-    <app-button class="actions__btn">
+    <app-button class="actions__btn" (click)="cancel()">
       <img class="actions__icon" src="assets/icons/close.svg" alt="create">
       Cancelar
     </app-button>

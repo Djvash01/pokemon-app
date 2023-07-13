@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { debounceTime, distinctUntilChanged, Subject, takeUntil } from 'rxjs';
+import { debounceTime, distinctUntilChanged, filter, Subject, takeUntil } from 'rxjs';
 @Component({
   selector: 'app-search-input',
   templateUrl: './search-input.component.html',
@@ -24,6 +24,7 @@ export class SearchInputComponent implements OnInit, OnDestroy {
     this.searchControl.valueChanges.pipe(
       debounceTime(500),
       distinctUntilChanged(),
+      filter((value) => !!value),
       takeUntil(this.unsubscribe$)
     ).subscribe((value) => this.valueChange.emit(value ?? ''))
   }

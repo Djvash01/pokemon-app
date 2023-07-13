@@ -1,6 +1,7 @@
 import { FormControl, FormGroup } from "@angular/forms";
 
 export interface PokemonForm extends FormGroup <{
+  id: FormControl<number>,
   name: FormControl<string>,
   image: FormControl<string>,
   attack: FormControl<number>,

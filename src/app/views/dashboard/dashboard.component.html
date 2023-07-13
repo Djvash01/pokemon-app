@@ -13,7 +13,7 @@
     <app-information [pokemon]="pokemon"></app-information>
   </section>
   <section>
-    <app-pokemon-form></app-pokemon-form>
+    <app-pokemon-form (saveEvent)="savePokemon($event)" (cancelEvent)="clearForm()"></app-pokemon-form>
   </section>
 </div>
 
